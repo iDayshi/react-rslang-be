@@ -11,12 +11,29 @@ const StatisticSchema = new Schema(
     learnedWords: {
       type: Number
     },
+    gamesAudioCall: {
+      type: Object,
+      learnedNewWords: Number,
+      series: Number,
+      percentage: Number,
+      gamesPlayed: Number
+    },
+    gamesSprint: {
+      type: Object,
+      learnedNewWords: Number,
+      series: Number,
+      percentage: Number,
+      gamesPlayed: Number
+    },
     optional: {
       type: Object,
       required: false
     }
   },
-  { collection: 'statistic' }
+  { collection: 'statistic' },
+  {
+    timestamps: { createdAt: 'created_at' }
+  }
 );
 
 addMethods(StatisticSchema);

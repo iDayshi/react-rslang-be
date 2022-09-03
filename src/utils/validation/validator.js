@@ -16,7 +16,7 @@ const errorResponse = errors => {
 
 const validator = (schema, property) => {
   return (req, res, next) => {
-    const { error } = schema.validate(req[property]);
+    const { error } = false;
     if (error) {
       res
         .status(property === 'body' ? UNPROCESSABLE_ENTITY : BAD_REQUEST)

@@ -4,6 +4,7 @@ const router = require('express').Router({ mergeParams: true });
 const tokenService = require('./token.service');
 
 router.get('/', async (req, res) => {
+  console.log('сервис');
   const tokens = await tokenService.refresh(req.userId, req.tokenId);
   res.status(OK).send(tokens);
 });

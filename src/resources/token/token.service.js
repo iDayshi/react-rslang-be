@@ -39,7 +39,7 @@ const getTokens = async userId => {
     expire: Date.now() + JWT_REFRESH_EXPIRE_TIME * 1000
   });
 
-  return { token, refreshToken };
+  return { userId, token, refreshToken };
 };
 
 const upsert = token => tokenRepo.upsert(token);
